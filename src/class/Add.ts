@@ -1,12 +1,12 @@
 class Add {
-	result: number;
+	result = 0;
 
 	sum(n: number, n2: number): Add {
 		this.result = n + n2;
 		return this;
 	}
 
-	getResult(): number {
+	getResult() {
 		return this.result;
 	}
 }
