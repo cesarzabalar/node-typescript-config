@@ -3,6 +3,7 @@
 - express
 - cors
 - mongoose
+- dotenv
 
 ## Dev Dependencies
 

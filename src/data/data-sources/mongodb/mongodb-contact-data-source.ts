@@ -1,6 +1,7 @@
 import { ContactDataSource } from '../../interfaces/data-sources/contact-data-source';
 import { DatabaseWrapper } from '../../interfaces/data-sources/database-wrapper';
 import { Contact } from '../../../domain/entities/contact';
+import { TContact } from '../../../domain/entities/IContact';
 
 export class MongoDBContactDataSource implements ContactDataSource {
 	constructor(private database: DatabaseWrapper) {}
@@ -8,9 +9,10 @@ export class MongoDBContactDataSource implements ContactDataSource {
 	async create(contact: Contact): Promise<boolean> {
 		return await this.database.insertOne(contact);
 	}
+
 	async getAll(): Promise<Contact[]> {
 		const result = await this.database.find({});
-		return result.map((item) => ({
+		return result.map((item: TContact) => ({
 			id: item._id.toString(),
 			surName: item.surName,
 			firstName: item.firstName,
