@@ -2,6 +2,8 @@
 
 - express
 - cors
+- mongoose
+- dotenv
 
 ## Dev Dependencies
 
@@ -15,6 +17,11 @@
 ### Framework
 
 - @types/express
+- @types/cors
+
+### Data Source
+
+- @types/mongoose
 
 ### Test
 
